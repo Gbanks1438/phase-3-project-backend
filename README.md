@@ -116,3 +116,68 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+<!-- MY NOTES -->
+<!-- Anticipated Steps:
+Clone both frontend and backend files down
+Open the main directory in a terminal and run bundle install
+Open a second terminal for the frontend
+Run npm i && npm start for frontend in the first terminal and open in browser
+Run bundle exec rake server for the backend in the second terminal and open in browser
+*Figure out the models and migrations diagram before coding
+Open a third terminal to the project directory to run commands
+Run bundle exec rake db:create_migration NAME=create_examples for the corresponding migrations
+Write the migration table logic in the migration file
+Create the files for the models
+Set up Active Record Associations
+Set up seed file
+Run bundle exec rake db:migrate to load up the tables
+Run bundle exec rake db:migrate:status to verify all tables are Up
+Run bundle exec rake db:seed
+Work on associate methods logic
+Work on CRUD methods
+Set up buttons and forms on the front end to interact with the tables
+Work on css for styling -->
+
+<!-- NOTES
+You can start your server with:
+$ bundle exec rake server
+This will run your server on port http://localhost:9292
+
+
+Your React app should make fetch requests to your Sinatra backend!
+
+fetch example:
+fetch("http://localhost:9292/test")
+  .then((r) => r.json())
+  .then((data) => console.log(data)); -->
+
+  <!-- DIAGRAM
+                                                    Hotels 
+                                              has_many reservations
+                                                  id: integer
+                                                  name: string
+                                                  address: string
+                                                  fireplaces: integer
+                                                  rooms: integer
+                                                  max_guests: integer
+                                                  has_modern_amenities: boolean
+                                                  is_lakeside: boolean
+                                                          |
+                                                          |				
+                                                          |						
+                                                          |								
+       										                        belongs_to :hotels											
+										                              belongs_to :guests											
+has_many :reservations					                  belongs_to :rooms			              		  has_many :reservations
+has_many :rooms, through::reservations			              |							                    has_many :guests, through::reservations
+						 |                                            |                                               |
+          Guests  	- 	 -  	 - 	   -  	 -    -   -  Reservations    -       -      -      -       -	Rooms
+          id: integer						                    id: integer					                            id: integer	
+          first_name: string				  	            guest_id: integer				                        floor_num: integer	
+          last_name: string				    	            room_id: integer			                          num_of_beds: integer
+          party_size: integer			    	            hotel_id: integer				                        bed_size: string	
+          reason_for_stay: string		                date_start: integer			                        has_ensuite: boolean
+                                                    date_end: integer
+                                                    is_available: boolean
+	 -->
