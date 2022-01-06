@@ -13,3 +13,7 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+# run HotelsController
+# run ReservationsController
+# run GuestsController
+# run RoomsController
