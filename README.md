@@ -1,3 +1,9 @@
+ABOUT:
+This app was a way for me to explore making an Airbnb style of app for my family members and friends to "time-share" a single vacation property. Users can schedule when they wish to use the vacation property to avoid conflicts with each other. The website is intended to also show details about the rooms and amenities, as well as available activities, and local businesses. The concept is to make planning a visit easy, even with a large group. My family owns a vacation property that I felt this idea could be applied to, so this was my first attempt at building a site for them. As I grow as a developer and strengthen my skills I hope to professionally build them a website to manage the property in real time.
+
+My backend is built using Ruby with Sinatra as my library. The Models are patterned with ActiveRecord. The Rake Gem was utilized for testing with the Command Line Interface. SQLite was used to interact with my database through development. There is no log-in security in this iteration of the website concept. I did not make a Monorepo for this project so the frontend and backend are separate repositories. This app is not hosted on Heroku currently. Please pull down a forked copy locally and use the instructions below to host the backend for the client.
+
+
 # Phase 3 Project Guidelines
 
 ## Learning Goals
